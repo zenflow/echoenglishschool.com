@@ -1,0 +1,11 @@
+version: "2"
+services:
+  apostrophe:
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data/uploads:/app/public/uploads
+    environment:
+      - APOS_MONGODB_URI=mongodb://host.docker.internal:27017/apos-my-site

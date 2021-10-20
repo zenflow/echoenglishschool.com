@@ -1,14 +1,25 @@
 {
   "name": "apos-my-site",
   "version": "1.0.0",
-  "description": "Apostrophe 3 Boilerplate Site",
-  "main": "app.js",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "node app",
     "dev": "nodemon",
-    "build": "NODE_ENV=production node app @apostrophecms/asset:build",
-    "serve": "NODE_ENV=production node app",
-    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate"
+    "build": "cross-env NODE_ENV=production node app @apostrophecms/asset:build",
+    "serve": "cross-env NODE_ENV=production node app",
+    "migrate": "node app @apostrophecms/migration:migrate"
+  },
+  "dependencies": {
+    "apostrophe": "^3.0.1",
+    "cross-env": "^7.0.3",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-apostrophe": "^3.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^2.0.7"
   },
   "nodemonConfig": {
     "delay": 1000,
@@ -29,21 +40,5 @@
       "data"
     ],
     "ext": "json, js, html, scss, vue"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/apostrophecms/apos-my-site"
-  },
-  "author": "Apostrophe Technologies, Inc.",
-  "license": "MIT",
-  "dependencies": {
-    "apostrophe": "^3.0.0",
-    "normalize.css": "^8.0.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.16.0",
-    "eslint-config-apostrophe": "^3.4.0",
-    "eslint-plugin-node": "^11.1.0",
-    "nodemon": "^2.0.7"
   }
 }
