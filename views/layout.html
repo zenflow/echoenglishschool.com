@@ -35,14 +35,16 @@
 {% block afterMain %}
   </main>
   <footer class="bp-footer">
-    <h3>Essential Links</h3>
-    <ul class="bp-footer__links">
-      <li><a href="https://apostrophecms.com/" target="_blank">About ApostropheCMS</a></li>
-      <li><a href="https://chat.apostrophecms.com/" target="_blank">Discord</a></li>
-      <li><a href="https://github.com/apostrophecms/apostrophe/tree/3.0" target="_blank">Github (3.0 branch)</a></li>
-      <li><a href="https://twitter.com/apostrophecms" target="_blank">Twitter</a></li>
-      <li><a href="https://forum.apostrophecms.org" target="_blank">Forum</a></li>
-    </ul>
+    {% if data.global.footerLinks.length %}
+      <h3>Links</h3>
+      <ul class="bp-footer__links">
+        {% for link in data.global.footerLinks %}
+          <li>
+            {{ apos.helper.getLinkHtml(link, { class: 'footer-links__link' }) | safe }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </footer>
 </div>{# Close .bp-wrapper #}
 {% endblock %}
