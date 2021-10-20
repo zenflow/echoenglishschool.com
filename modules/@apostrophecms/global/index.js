@@ -3,6 +3,11 @@ const { linkFields } = require('../../../lib/link');
 module.exports = {
   fields: {
     add: {
+      siteTitle: {
+        label: 'Site Title',
+        type: 'string',
+        def: 'My Site'
+      },
       footerLinks: {
         label: 'Footer Links',
         type: 'array',
@@ -15,7 +20,7 @@ module.exports = {
     group: {
       general: {
         label: 'General',
-        fields: [ 'footerLinks' ]
+        fields: [ 'siteTitle', 'footerLinks' ]
       }
     }
   }
