@@ -9,3 +9,4 @@ services:
       - ./data/uploads:/app/public/uploads
     environment:
       - APOS_MONGODB_URI=mongodb://host.docker.internal:27017/apos-my-site
+      - SESSION_SECRET=session_secret
