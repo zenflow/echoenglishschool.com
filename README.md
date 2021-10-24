@@ -7,6 +7,3 @@
 - Project originally scaffolded from
   https://github.com/apostrophecms/a3-boilerplate/tree/e0804b8ee9dad2f77d235980bb5151764f41fdf4
   by running `apos create apos-my-site`
-- To create admin user, run
-  `node app @apostrophecms/user:add --username=admin --role=admin`
-  with APOS_MONGODB_URI env var properly defined

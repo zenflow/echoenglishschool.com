@@ -26,6 +26,7 @@ require('apostrophe')({
         className: 'bp-video-widget'
       }
     },
+    'init-db': {},
     asset: {},
     helper: {},
     'default-page': {}
