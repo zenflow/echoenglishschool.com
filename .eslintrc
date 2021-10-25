@@ -1,12 +1,6 @@
 {
   "extends": [
-    "apostrophe"
+    "zenflow"
   ],
-  "globals": {
-    "apos": true
-  },
-  "rules": {
-    "no-var": "error",
-    "no-console": 0
-  }
+  "rules": {}
 }

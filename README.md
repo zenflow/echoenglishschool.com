@@ -20,6 +20,7 @@ v5 or later
 5. (Optional) [Docker](https://docs.docker.com/get-docker/) (for testing production Docker image)
 
 #### Setup
+
 1. Fork this repo on GitHub
 2. Clone your fork onto your local machine (`git clone https://github.com/<your username/apos-my-site`)
 3. `cd` into the repo on your local machine (`cd apos-my-site`)
@@ -38,4 +39,4 @@ v5 or later
 
 ## TODO
 
-- Get sync-down & sync-up scripts working
+- Get `scripts/sync-{up,down}` working and use for automatic backups (possibly publish module)
