@@ -1,11 +1,11 @@
 module.exports = {
   options: {
     session: {
-      secret: undefined
-    }
+      secret: undefined,
+    },
   },
-  init (self) {
+  init(self) {
     // set session secret at run-time, not build-time
-    self.options.session.secret = process.env.SESSION_SECRET || 'session_secret';
-  }
+    self.options.session.secret = process.env.SESSION_SECRET || "session_secret";
+  },
 };

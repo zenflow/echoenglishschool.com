@@ -1,12 +1,12 @@
-const { linkHelpers } = require('../../lib/link');
+const { linkHelpers } = require("../../lib/link");
 
 module.exports = {
   options: {
-    alias: 'helper'
+    alias: "helper",
   },
   init(self) {
     self.addHelpers({
-      ...linkHelpers
+      ...linkHelpers,
     });
-  }
+  },
 };

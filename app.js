@@ -1,5 +1,5 @@
-require('apostrophe')({
-  shortName: 'apos-my-site',
+require("apostrophe")({
+  shortName: "apos-my-site",
   modules: {
     // Apostrophe module configuration
     // *******************************
@@ -11,24 +11,24 @@ require('apostrophe')({
     // have a minimal configuration here to turn them on: `moduleName: {}`
     // ***********************************************************************
     // `className` options set custom CSS classes for Apostrophe core widgets.
-    '@apostrophecms/rich-text-widget': {
+    "@apostrophecms/rich-text-widget": {
       options: {
-        className: 'bp-rich-text'
-      }
+        className: "bp-rich-text",
+      },
     },
-    '@apostrophecms/image-widget': {
+    "@apostrophecms/image-widget": {
       options: {
-        className: 'bp-image-widget'
-      }
+        className: "bp-image-widget",
+      },
     },
-    '@apostrophecms/video-widget': {
+    "@apostrophecms/video-widget": {
       options: {
-        className: 'bp-video-widget'
-      }
+        className: "bp-video-widget",
+      },
     },
-    'init-db': {},
+    "init-db": {},
     asset: {},
     helper: {},
-    'default-page': {}
-  }
+    "default-page": {},
+  },
 });
