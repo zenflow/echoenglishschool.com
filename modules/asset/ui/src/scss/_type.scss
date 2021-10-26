@@ -9,6 +9,10 @@ h1 {
   font-weight: 200;
 }
 
+p {
+  line-height: 1.5;
+}
+
 a {
   color: $color-purple;
   text-decoration: none;
@@ -27,33 +31,6 @@ a {
   background-color: $color-gold;
 }
 
-code {
-  white-space: normal;
-}
-
-pre {
-  display: flex;
-  position: relative;
-  font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-  color: white;
-  font-size: 14px;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.8;
-  tab-size: 4;
-  hyphens: none;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  overflow: auto;
-  background: #2b2b2b;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .bp-button {
   display: inline-block;
   padding: 12px 24px 10px 24px;
@@ -64,6 +41,7 @@ pre {
   font-weight: 500;
   background: $color-purple;
   color: white;
+
   &:visited, &:hover, &:active {
     color: white;
   }

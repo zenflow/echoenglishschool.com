@@ -13,7 +13,7 @@ module.exports = {
         type: "array",
         titleField: "linkText",
         fields: {
-          add: { ...linkFields },
+          add: linkFields(),
         },
       },
     },

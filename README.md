@@ -16,8 +16,7 @@
 v14 or later
 3. [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/)
 v5 or later
-4. (Optional) [ImageMagick](https://imagemagick.org/script/download.php) (for compressing image uploads)
-5. (Optional) [Docker](https://docs.docker.com/get-docker/) (for testing production Docker image)
+4. (Optional) [Docker](https://docs.docker.com/get-docker/) (for testing production Docker image)
 
 #### Setup
 
@@ -36,7 +35,3 @@ v5 or later
 
 1. Use the `Dockerfile` in the repo root
 2. Configure ports/volumes/environment according to the [docker-compose.yml](./docker-compose.yml).
-
-## TODO
-
-- Get `scripts/sync-{up,down}` working and use for automatic backups (possibly publish module)

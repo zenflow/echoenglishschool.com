@@ -1,12 +1,8 @@
-{#
-  Use this template to build out your 404 error pages. Like page templates,
-  it inherits a global layout.
-#}
-
 {% extends "layout.html" %}
 
-{% block title %}404 - Page not found{% endblock %}
+{% set title = "404 Page Not Found" %}
 
 {% block main %}
-  We're sorry. We couldn't find the page you're looking for.
+  <h1>404</h1>
+  <h3>The page you're looking for cannot be found.</h3>
 {% endblock %}

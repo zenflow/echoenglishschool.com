@@ -1,18 +1,15 @@
-{# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
-{% set title = data.piece.title or data.page.title %}
 {% block title %}
+  {% set title = title or data.piece.title or data.page.title %}
   {% if title %}
     {{ title }} | {{data.global.siteTitle}}
   {% else %}
-    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
     {{data.global.siteTitle}}
   {% endif %}
 {% endblock %}
 
-{% block extraHead %}
-{% endblock %}
+{% block extraHead %}{% endblock %}
 
 {% block beforeMain %}
 <div class="bp-wrapper">
@@ -26,13 +23,8 @@
   <main class="bp-main">
 {% endblock %}
 
-{% block main %}
-  {#
-    Usually, your page templates in the @apostrophecms/pages module will override
-    this block. It is safe to assume this is where your page-specific content
-    should go.
-  #}
-{% endblock %}
+{# This block is overridden by specific page templates #}
+{% block main %} {% endblock %}
 
 {% block afterMain %}
   </main>
@@ -51,5 +43,4 @@
 </div>{# Close .bp-wrapper #}
 {% endblock %}
 
-{% block afterAposScripts %}
-{% endblock %}
+{% block afterAposScripts %}{% endblock %}
