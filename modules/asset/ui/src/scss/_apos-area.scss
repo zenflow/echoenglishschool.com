@@ -1,0 +1,15 @@
+/* TODO: This is brittle and shouldn't be needed */
+[data-apos-area] [data-apos-area],
+[data-apos-area] [data-apos-area] [data-apos-area] {
+  margin: 0 !important;
+}
+
+/* TODO: There should be a more reliable way to do this */
+.apos-area > *,
+.apos-areas-widgets-list > * {
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

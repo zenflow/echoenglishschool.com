@@ -14,24 +14,28 @@
 {% block beforeMain %}
 <div class="bp-wrapper">
   <header class="bp-header">
-    <img class="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo">
-    <nav class="bp-nav"></nav>
-    {% if not data.user %}
-      <a class="bp-button bp-header__login" href="/login">Login</a>
-    {% endif %}
+    <div class="bp-header-content">
+      <img class="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo">
+      <nav class="bp-nav"></nav>
+      {% if not data.user %}
+        <a class="bp-button" href="/login">Login</a>
+      {% endif %}
+    </div>
   </header>
   <main class="bp-main">
+    <div class="bp-main-content">
 {% endblock %}
 
 {# This block is overridden by specific page templates #}
 {% block main %} {% endblock %}
 
 {% block afterMain %}
+    </div>
   </main>
   <footer class="bp-footer">
     {% if data.global.footerLinks.length %}
       <h3>Links</h3>
-      <ul class="bp-footer__links">
+      <ul>
         {% for link in data.global.footerLinks %}
           <li>
             {{ apos.helper.getLinkHtml(link, { class: 'footer-links__link' }) | safe }}
