@@ -14,7 +14,7 @@
     "migrate": "node app @apostrophecms/migration:migrate"
   },
   "dependencies": {
-    "apostrophe": "^3.0.1",
+    "apostrophe": "https://github.com/zenflow/apostrophe/tarball/zenflow-v1",
     "cross-env": "^7.0.3",
     "normalize.css": "^8.0.1"
   },
