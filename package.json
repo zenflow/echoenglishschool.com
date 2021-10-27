@@ -8,10 +8,10 @@
     "lint-fix": "npm run lint -- --fix",
     "start": "node app",
     "dev": "nodemon",
+    "clean": "del-cli apos-build data public/apos-frontend",
     "build": "cross-env NODE_ENV=production node app @apostrophecms/asset:build",
-    "clean": "del-cli apos-build data public/apos-frontend public/uploads",
     "serve": "cross-env NODE_ENV=production node app",
-    "migrate": "node app @apostrophecms/migration:migrate"
+    "db-restore": "cross-env MONGODB_URI=mongodb://localhost/apos-my-site node scripts/db-restore"
   },
   "dependencies": {
     "apostrophe": "https://github.com/zenflow/apostrophe/tarball/zenflow-v1",
@@ -19,6 +19,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@cdxoo/mongodb-restore": "^1.1.2",
     "del-cli": "^4.0.1",
     "eslint": "^7.16.0",
     "eslint-config-zenflow": "^3.0.0",

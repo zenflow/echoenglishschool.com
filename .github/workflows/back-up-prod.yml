@@ -1,0 +1,31 @@
+name: Back up prod
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: '59 23 * * *' # last minute of every day (UTC time zone)
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: backup/prod
+      - name: Fetch db
+        run: |
+          chmod +x scripts/db-dump.sh \
+            && ./scripts/db-dump.sh
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      - name: Fetch uploads
+        run: |
+          chmod +x scripts/uploads-pull.sh \
+            && ./scripts/uploads-pull.sh
+        env:
+          UPLOADS_DIR: ${{ secrets.UPLOADS_DIR }}
+      - name: Push updates to GitHub
+        run: |
+          git config --global user.name 'GitHub Actions' \
+            && git config --global user.email 'robot@matthewbrunetti.com' \
+            && git add db public/uploads \
+            && git commit -m "Back up prod" \
+            && git push
