@@ -17,6 +17,10 @@
 2. Clone your fork onto your local machine (`git clone https://github.com/<your username/apos-my-site`)
 3. `cd` into the repo on your local machine (`cd apos-my-site`)
 4. Install dependencies (`npm install`)
+5. Copy contents of [`.env.example`](./.env.example) into `.env`
+   - These defaults are good for local development, and you can edit this file at any time.
+   - *Please be aware* If you want to change `APOS_MONGODB_URI`, that value is overridden in `docker-compose.yml`,
+     used when running the app in Docker.
 
 ### Tasks
 
@@ -33,11 +37,15 @@
 ## Deploying to production
 
 1. Build the `Dockerfile` in the repo root
-2. Configure ports/volumes/environment according to the [docker-compose.yml](./docker-compose.yml)
+2. Configure:
+    - mount volume for `/app/public/uploads`
+    - environment variables according to the [.env.example](./.env.example)
+        - *Hint* If you get errors about failed authentication when starting the app,
+          then you may need the `?authSource=admin` query param.
 3. (Optional) Restore app data:
-   1. Database. Restore from `db` folder /w `MONGODB_URI=<connection-string> node scripts/restore-db`
-   2. Uploads. Copy files from `public/uploads` into the volume.
-4. Start the app
+    1. Database. Restore from `db` folder /w `MONGODB_URI=<connection-string> node scripts/restore-db`
+    2. Uploads. Copy files from `public/uploads` into the volume.
+4. Start the container
 
 ## Automated backups of production
 

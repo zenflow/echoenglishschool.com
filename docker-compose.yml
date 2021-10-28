@@ -7,9 +7,7 @@ services:
       - "3000:3000"
     volumes:
       - ./public/uploads:/app/public/uploads
+    env_file: .env
     environment:
-      - PORT=3000
-      - APOS_MONGODB_URI=mongodb://host.docker.internal:27017/apos-my-site?authSource=admin
-      # Note: If you get errors about failed authentication when starting the app,
-      #   then the `?authSource=admin` query param might be needed
-      - SESSION_SECRET=session_secret
+      # Adjust for being inside a Docker container
+      - APOS_MONGODB_URI=mongodb://host.docker.internal/apos-my-site

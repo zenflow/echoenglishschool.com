@@ -1,8 +1,8 @@
 # standard node.js
 node_modules
+.env
 
 # apostrophe
-/locales
 /data
 /apos-build
 /public/apos-frontend
