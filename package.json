@@ -14,7 +14,9 @@
     "db-restore": "cross-env MONGODB_URI=mongodb://localhost/apos-my-site node scripts/db-restore"
   },
   "dependencies": {
-    "apostrophe": "https://github.com/zenflow/apostrophe/tarball/zenflow-v2"
+    "@apostrophecms/redirect": "^1.1.0",
+    "@apostrophecms/sitemap": "^1.0.0",
+    "apostrophe": "^3.7.0"
   },
   "devDependencies": {
     "@cdxoo/mongodb-restore": "^1.1.2",

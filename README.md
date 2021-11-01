@@ -68,5 +68,3 @@ To trigger a backup on-demand, go to your project "Actions", select "Back up pro
 click the "Run workflow" dropdown, and click the "Run workflow" button.
 
 ## TODO
-
-- Install [available extensions](https://apostrophecms.com/extensions?compatibility=3)
