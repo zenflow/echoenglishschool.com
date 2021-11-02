@@ -4,6 +4,10 @@ require("apostrophe")({
   modules: {
     // --- core ---
 
+    // TODO: this should be default
+    "@apostrophecms/image-tag": { options: { slugPrefix: "image-tag-" } },
+    "@apostrophecms/file-tag": { options: { slugPrefix: "file-tag-" } },
+
     // --- extensions ---
     "@apostrophecms/redirect": {},
     "@apostrophecms/sitemap": {},
