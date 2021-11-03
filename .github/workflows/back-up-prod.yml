@@ -22,10 +22,10 @@ jobs:
             && ./scripts/uploads-pull.sh
         env:
           UPLOADS_DIR: ${{ secrets.UPLOADS_DIR }}
-      - name: Push updates to GitHub
-        run: |
-          git config --global user.name 'GitHub Actions' \
-            && git config --global user.email 'robot@matthewbrunetti.com' \
-            && git add db public/uploads \
-            && git commit -m "Back up prod" \
-            && git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: db public/uploads
+          commit_message: Back up prod
+          commit_user_name: Backup Bot
+          commit_user_email: backup-bot@fake.com
+          commit_author: Backup Bot <backup-bot@fake.com>

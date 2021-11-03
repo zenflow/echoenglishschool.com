@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 export UPLOADS_DIR_USER=$( echo $UPLOADS_DIR | cut -d ':' -f 1 )
 export UPLOADS_DIR_PASS=$( echo $UPLOADS_DIR | cut -d ':' -f 2 | cut -d '@' -f 1 )
