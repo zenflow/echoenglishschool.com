@@ -21,7 +21,6 @@ module.exports = {
       backgroundColor: {
         type: "color",
         label: "Background Color",
-        help: "Background color of the container",
         options: {
           pickerOptions: colorPickerOptions(),
         },
@@ -29,7 +28,6 @@ module.exports = {
       borderColor: {
         type: "color",
         label: "Border Color",
-        help: "Border color of the container",
         options: {
           pickerOptions: colorPickerOptions(),
         },
@@ -37,7 +35,6 @@ module.exports = {
       radius: {
         type: "boolean",
         label: "Border Radius",
-        help: "Adds a 20px border radius",
         def: false,
       },
     },

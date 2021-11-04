@@ -1,15 +1,16 @@
-/* TODO: This is brittle and shouldn't be needed */
+/* TODO: This shouldn't be needed */
 [data-apos-area] [data-apos-area],
 [data-apos-area] [data-apos-area] [data-apos-area] {
   margin: 0 !important;
 }
 
-/* TODO: There should be a more reliable way to do this */
-.apos-area > *,
-.apos-areas-widgets-list > * {
-  margin-bottom: 40px;
+/* TODO: This shouldn't be needed */
+.apos-area-widget-inner {
+  min-height: unset !important;
+}
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+.apos-area, .apos-areas-widgets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

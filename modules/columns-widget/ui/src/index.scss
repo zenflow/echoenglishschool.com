@@ -3,38 +3,17 @@
 .columns-widget {
   display: flex;
   justify-content: space-between;
-}
-
-.columns-widget__column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-  margin-right: 5%;
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.columns-widget--33-33-33 .columns-widget__column {
-  width: 30%;
-  margin-right: 5%;
-  &:last-child {
-    margin-right: 0;
+  gap: 1rem;
+  .columns-widget__column {
+    flex: 1;
   }
 }
 
 @media only screen and (max-width: $breakpoint-max-width-xs) {
   .columns-widget {
     flex-direction: column;
-
     .columns-widget__column {
-      margin-bottom: 20px;
       width: 100%;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 }

@@ -4,6 +4,7 @@ module.exports = {
     defaultOptions: {
       toolbar: [
         "styles",
+        "|",
         "bold",
         "italic",
         "underline",
@@ -16,10 +17,7 @@ module.exports = {
         "orderedList",
         // "blockquote", // TODO: style <blockquote> element
         "|",
-        "alignLeft",
-        "alignCenter",
-        "alignRight",
-        "alignJustify",
+        "horizontalRule",
       ],
       styles: [
         {
