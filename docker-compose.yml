@@ -1,7 +1,6 @@
 version: "2"
 services:
   apostrophe:
-    restart: always
     build: .
     ports:
       - "3000:3000"
