@@ -1,7 +1,9 @@
 {% extends data.outerLayout %}
 
+{% set title = title or data.piece.title or data.page.title %}
+{% set verticalCenterContent = verticalCenterContent or false %}
+
 {% block title %}
-  {% set title = title or data.piece.title or data.page.title %}
   {% if title %}
     {{ title }} | {{data.global.siteTitle}}
   {% else %}
@@ -22,7 +24,7 @@
       {% endif %}
     </div>
   </header>
-  <main class="bp-main">
+  <main class="bp-main {% if verticalCenterContent %}bp-main__vertical_center_content{% endif %}">
     <div class="bp-main-content">
 {% endblock %}
 

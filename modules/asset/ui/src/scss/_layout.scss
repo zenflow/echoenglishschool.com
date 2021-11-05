@@ -19,8 +19,11 @@ body,
 
 .bp-main {
   display: flex;
-  align-items: center;
   justify-content: center;
+
+  &.bp-main__vertical_center_content {
+    align-items: center;
+  }
 
   .bp-main-content {
     width: 100%;
