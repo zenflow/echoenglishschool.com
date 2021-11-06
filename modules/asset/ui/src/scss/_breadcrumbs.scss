@@ -1,0 +1,18 @@
+@import '../../../../../lib/_variables';
+
+.bp-breadcrumbs {
+  margin-bottom: .5rem;
+  padding: 1rem;
+  background: lighten($color-purple-light, 30%);
+
+  & > a {
+    &:last-child {
+      font-weight: bold;
+      text-decoration: black;
+    }
+  }
+
+  & > span {
+    margin: 0 .25rem;
+  }
+}

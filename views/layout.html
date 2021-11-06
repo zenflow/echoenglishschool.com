@@ -11,8 +11,6 @@
   {% endif %}
 {% endblock %}
 
-{% block extraHead %}{% endblock %}
-
 {% block beforeMain %}
 <div class="bp-wrapper">
   <header class="bp-header">
@@ -49,4 +47,11 @@
 </div>{# Close .bp-wrapper #}
 {% endblock %}
 
-{% block afterAposScripts %}{% endblock %}
+{% block extraBody %}
+{% if apos.helper.isDev() %}
+<script>
+  window.data = {{ apos.helper.jsonStringify(data) | safe }};
+  console.log('window.data =', window.data);
+</script>
+{% endif %}
+{% endblock %}
