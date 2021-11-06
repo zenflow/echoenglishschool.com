@@ -13,12 +13,14 @@ require("apostrophe")({
     "@apostrophecms/sitemap": {},
 
     // --- custom ---
-    debug: {},
     "init-db": {},
     helper: {},
     asset: {},
+    admin: {},
     "columns-widget": {},
     "container-widget": {},
     "default-page": {},
+    article: {},
+    topic: {},
   },
 });

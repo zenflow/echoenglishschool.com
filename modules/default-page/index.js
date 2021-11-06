@@ -8,6 +8,7 @@ module.exports = {
   fields: {
     add: {
       main: {
+        label: "Content",
         type: "area",
         options: {
           widgets: defaultWidgets(),
