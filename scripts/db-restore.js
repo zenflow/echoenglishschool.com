@@ -22,7 +22,7 @@ async function main() {
   console.log(`Restored data from \`db\` folder to ${uri}`);
 }
 
-main().catch(error => {
+main().catch((error) => {
   console.error(error);
   process.exit(1);
 });
