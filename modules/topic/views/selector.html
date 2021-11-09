@@ -1,0 +1,12 @@
+<form class="topic-selector">
+  <div>
+    <input type="radio" name="topic" id="all" value="" checked>
+    <label for="all">All</label>
+  </div>
+  {% for topic in data.topics %}
+  <div>
+    <input type="radio" name="topic" id="{{ topic.slug }}" value="{{ topic.slug }}">
+    <label for="{{ topic.slug }}">{{ topic.title }}</label>
+  </div>
+  {% endfor %}
+</form>

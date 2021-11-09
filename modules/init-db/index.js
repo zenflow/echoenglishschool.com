@@ -42,7 +42,7 @@ async function initDb(self) {
   const globalDoc = await self.apos.global.findGlobal(req.clone({ mode: "draft" }));
   globalDoc.footerLinks = [
     { linkText: "Home", linkType: "custom", linkUrl: "/" },
-    { linkText: "Login", linkType: "custom", linkUrl: "/login" },
+    { linkText: "Blog", linkType: "custom", linkUrl: "/blog" },
   ];
   await self.apos.global.update(req, globalDoc);
   await self.apos.global.publish(req, globalDoc);

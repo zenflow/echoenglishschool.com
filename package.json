@@ -16,7 +16,8 @@
   "dependencies": {
     "@apostrophecms/redirect": "^1.1.0",
     "@apostrophecms/sitemap": "^1.0.0",
-    "apostrophe": "^3.7.0"
+    "apostrophe": "^3.7.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@cdxoo/mongodb-restore": "^1.1.2",
@@ -25,6 +26,9 @@
     "dotenv-cli": "^4.0.0",
     "eslint": "^7.16.0",
     "eslint-config-zenflow": "^3.0.0",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.6.0",
+    "jquery-bridget": "^3.0.0",
     "nodemon": "^2.0.7",
     "normalize.css": "^8.0.1"
   },

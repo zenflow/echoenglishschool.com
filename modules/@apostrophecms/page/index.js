@@ -1,6 +1,3 @@
-// This configures the @apostrophecms/pages module to add a "home" page type to the
-// pages menu
-
 module.exports = {
   options: {
     types: [
@@ -8,9 +5,15 @@ module.exports = {
         name: "default-page",
         label: "Default",
       },
+    ],
+    park: [
       {
-        name: "@apostrophecms/home-page",
-        label: "Home",
+        parkedId: "blogParkedId",
+        type: "article-page",
+        _defaults: {
+          slug: "/blog",
+          title: "Blog",
+        },
       },
     ],
   },

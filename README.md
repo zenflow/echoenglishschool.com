@@ -46,6 +46,7 @@
     1. Database. Restore from `db` folder /w `MONGODB_URI=<connection-string> node scripts/restore-db`
     2. Uploads. Copy files from `public/uploads` into the volume.
 4. Start the container
+5. If you skipped the "Restore app data" step, log in with username "admin" password "admin" and edit this user.
 
 ## Automated backups of production
 
@@ -66,5 +67,3 @@ To set up:
 
 To trigger a backup on-demand, go to your project "Actions", select "Back up prod" from the list of workflows,
 click the "Run workflow" dropdown, and click the "Run workflow" button.
-
-## TODO

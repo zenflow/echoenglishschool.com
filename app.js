@@ -22,5 +22,6 @@ require("apostrophe")({
     "default-page": {},
     article: {},
     topic: {},
+    "article-page": {},
   },
 });

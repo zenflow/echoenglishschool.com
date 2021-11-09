@@ -29,4 +29,13 @@ module.exports = {
     },
     order: ["title", "order", "updatedAt"],
   },
+  components(self) {
+    return {
+      async selector(req) {
+        return {
+          topics: await self.find(req).sort({ order: 1 }).toArray(),
+        };
+      },
+    };
+  },
 };

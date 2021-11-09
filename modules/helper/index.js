@@ -1,3 +1,4 @@
+const lodash = require("lodash");
 const { linkHelpers } = require("../../lib/link");
 
 module.exports = {
@@ -6,6 +7,7 @@ module.exports = {
   },
   init(self) {
     self.addHelpers({
+      ...lodash,
       ...linkHelpers,
       jsonStringify(o) {
         return JSON.stringify(o);
@@ -19,6 +21,10 @@ module.exports = {
           items.push(data.piece);
         }
         return items;
+      },
+      formatDateForHuman(input) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(input).toLocaleDateString(undefined, options);
       },
     });
   },
