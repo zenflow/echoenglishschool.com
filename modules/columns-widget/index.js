@@ -28,14 +28,14 @@ module.exports = {
         type: "area",
         contextual: true,
         options: {
-          widgets: defaultWidgets({ exclude: ["columns"] }),
+          widgets: defaultWidgets({ fullWidthWidgets: false }),
         },
       },
       two: {
         type: "area",
         contextual: true,
         options: {
-          widgets: defaultWidgets({ exclude: ["columns"] }),
+          widgets: defaultWidgets({ fullWidthWidgets: false }),
         },
       },
       three: {
@@ -45,7 +45,7 @@ module.exports = {
           cols: "33-33-33",
         },
         options: {
-          widgets: defaultWidgets({ exclude: ["columns"] }),
+          widgets: defaultWidgets({ fullWidthWidgets: false }),
         },
       },
     },

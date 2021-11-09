@@ -14,6 +14,7 @@
     "db-restore": "cross-env MONGODB_URI=mongodb://localhost/apos-my-site node scripts/db-restore"
   },
   "dependencies": {
+    "@apostrophecms/form": "^1.0.0-beta.1",
     "@apostrophecms/redirect": "^1.1.0",
     "@apostrophecms/sitemap": "^1.0.0",
     "apostrophe": "^3.7.0",

@@ -15,7 +15,7 @@ module.exports = {
       content: {
         type: "area",
         options: {
-          widgets: defaultWidgets({ exclude: ["columns"] }),
+          widgets: defaultWidgets({ fullWidthWidgets: false }),
         },
       },
       backgroundColor: {
