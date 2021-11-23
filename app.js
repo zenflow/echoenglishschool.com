@@ -1,5 +1,5 @@
 require("apostrophe")({
-  shortName: "apos-my-site",
+  shortName: "echo-english-school",
   baseUrl: process.env.BASE_URL,
   modules: {
     // --- core ---
