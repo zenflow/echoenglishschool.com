@@ -1,7 +1,8 @@
 {% extends data.outerLayout %}
 
 {% set title = title or data.piece.title or data.page.title %}
-{% set verticalCenterContent = verticalCenterContent or false %}
+
+<!-- --- --- --- --- --- --- --- -->
 
 {% block title %}
   {% if title %}
@@ -11,43 +12,32 @@
   {% endif %}
 {% endblock %}
 
-{% block beforeMain %}
-<div class="bp-wrapper">
-  <header class="bp-header">
-    <div class="bp-header-content">
-      <img class="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo">
-      <nav class="bp-nav"></nav>
-      {% if not data.user %}
-        <a class="bp-button" href="/login">Login</a>
-      {% endif %}
-    </div>
-  </header>
-  <main class="bp-main {% if verticalCenterContent %}bp-main__vertical_center_content{% endif %}">
-    <div class="bp-main-content">
+<!-- --- --- --- --- --- --- --- -->
+
+{% block startHead %}
+<!--<link rel="icon" href="/favicon.ico">-->
+{% set fonts = ["Roboto", "Dosis", "Lato", "Raleway", "Quicksand", "Raleway", "Open+Sans", "Dosis", "Montserrat", "Nunito", "Asap"] %}
+<link href="https://fonts.googleapis.com/css2?<% for font in fonts %>family={{ font }}:wght@300;400;500;600;700&<% endfor %>display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
 {% endblock %}
 
-{# This block is overridden by specific page templates #}
-{% block main %} {% endblock %}
+<!-- --- --- --- --- --- --- --- -->
 
-{% block afterMain %}
-    </div>
-  </main>
-  <footer class="bp-footer">
-    {% if data.global.footerLinks.length %}
-      <h3>Links</h3>
-      <ul>
-        {% for link in data.global.footerLinks %}
-          <li>
-            {{ apos.helper.getLinkHtml(link, { class: 'footer-links__link' }) | safe }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </footer>
-</div>{# Close .bp-wrapper #}
+{% block beforeMain %}
+<main>
+  {% endblock %}
+  {% block afterMain %}
+</main>
 {% endblock %}
 
 {% block extraBody %}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/wow.js@1.2.2/dist/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js"></script>
 {% if apos.helper.isDev() %}
 <script>
   window.data = {{ apos.helper.jsonStringify(data) | safe }};

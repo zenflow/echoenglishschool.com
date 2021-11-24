@@ -1,8 +1,6 @@
 {% extends "layout.html" %}
-{% import "breadcrumbs.html" as breadcrumbs with context %}
 
 {% block main %}
-{{ breadcrumbs.render() }}
 <h1>{{data.page.title}}</h1>
 {% area data.page, 'main' %}
 {% endblock %}

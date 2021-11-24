@@ -1,5 +1,3 @@
-const { defaultWidgets } = require("../../lib/defaultWidgets");
-
 module.exports = {
   extend: "@apostrophecms/page-type",
   options: {
@@ -11,7 +9,7 @@ module.exports = {
         label: "Content",
         type: "area",
         options: {
-          widgets: defaultWidgets(),
+          widgets: {},
         },
       },
     },

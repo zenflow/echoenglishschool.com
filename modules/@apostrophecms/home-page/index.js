@@ -1,5 +1,3 @@
-const { defaultWidgets } = require("../../../lib/defaultWidgets");
-
 module.exports = {
   options: {
     label: "Home Page",
@@ -10,7 +8,7 @@ module.exports = {
         label: "Content",
         type: "area",
         options: {
-          widgets: defaultWidgets(),
+          widgets: {},
         },
       },
     },

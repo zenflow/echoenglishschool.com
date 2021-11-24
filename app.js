@@ -26,11 +26,6 @@ require("apostrophe")({
     helper: {},
     asset: {},
     admin: {},
-    "columns-widget": {},
-    "container-widget": {},
     "default-page": {},
-    article: {},
-    topic: {},
-    "article-page": {},
   },
 });
