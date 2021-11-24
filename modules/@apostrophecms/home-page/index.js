@@ -8,7 +8,9 @@ module.exports = {
         label: "Content",
         type: "area",
         options: {
-          widgets: {},
+          widgets: {
+            "home-section": {},
+          },
         },
       },
     },

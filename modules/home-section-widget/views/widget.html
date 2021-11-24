@@ -1,0 +1,12 @@
+{% if data.widget.isLinkInNavbar %}
+<div id="{{ data.widget.name.toLowerCase() }}" style="position: relative; top: -74px"></div>
+{# TODO: make css variable for magic number 74px #}
+{% endif %}
+
+{% set style = apos.helper.getBackgroundStyle(apos, data.widget)
+  + apos.helper.getTextStyle(apos, data.widget) %}
+<div style="{{ style }}">
+  <div class="container">
+    {% area data.widget, 'main' %}
+  </div>
+</div>

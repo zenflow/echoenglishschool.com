@@ -13,11 +13,15 @@ module.exports = {
         // "highlight", // TODO: style <mark> element
         // "codeBlock", // TODO: style <code> element
         "|",
+        "alignLeft",
+        "alignCenter",
+        "alignRight",
+        "|",
         "bulletList",
         "orderedList",
         // "blockquote", // TODO: style <blockquote> element
-        "|",
-        "horizontalRule",
+        // "|",
+        // "horizontalRule", // TODO: style <hr> element
       ],
       styles: [
         {

@@ -27,5 +27,6 @@ require("apostrophe")({
     asset: {},
     admin: {},
     "default-page": {},
+    "home-section-widget": {},
   },
 });
