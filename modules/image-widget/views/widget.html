@@ -1,0 +1,9 @@
+{% set attachment = apos.image.first(data.widget._image) %}
+{% if attachment %}
+<img
+  class="image-widget"
+  srcset="{{ apos.image.srcset(attachment) }}"
+  src="{{ apos.attachment.url(attachment, { size: 'full' }) }}"
+  alt="{{ attachment._alt or '' }}"
+/>
+{% endif %}

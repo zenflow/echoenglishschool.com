@@ -18,8 +18,7 @@ module.exports = {
         options: {
           widgets: {
             "@apostrophecms/rich-text": {},
-            "@apostrophecms/image": {},
-            "@apostrophecms/video": {},
+            image: {},
             container: {},
             columns: {},
           },

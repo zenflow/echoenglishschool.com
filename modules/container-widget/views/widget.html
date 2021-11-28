@@ -1,6 +1,6 @@
 {% set style = apos.helper.getBackgroundStyle(apos, data.widget)
   + apos.helper.getTextStyle(apos, data.widget)
   + apos.helper.getBoxStyle(apos, data.widget) %}
-<div style="{{ style }}">
+<div class="container-widget" style="{{ style }}">
   {% area data.widget, 'main' %}
 </div>
