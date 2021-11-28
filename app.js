@@ -28,5 +28,6 @@ require("apostrophe")({
     admin: {},
     "default-page": {},
     "home-section-widget": {},
+    "container-widget": {},
   },
 });

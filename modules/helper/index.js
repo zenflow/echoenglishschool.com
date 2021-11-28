@@ -1,6 +1,7 @@
 const lodash = require("lodash");
 const { getBackgroundStyle } = require("../../lib/style/background");
 const { getTextStyle } = require("../../lib/style/text");
+const { getBoxStyle } = require("../../lib/style/box");
 
 module.exports = {
   options: {
@@ -11,6 +12,7 @@ module.exports = {
       ...lodash,
       getBackgroundStyle,
       getTextStyle,
+      getBoxStyle,
       jsonStringify(o) {
         return JSON.stringify(o);
       },
