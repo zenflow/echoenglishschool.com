@@ -1,7 +1,7 @@
 const lodash = require("lodash");
-const { getBackgroundStyle } = require("../../lib/style/background");
-const { getTextStyle } = require("../../lib/style/text");
-const { getBoxStyle } = require("../../lib/style/box");
+const { getBoxStyle } = require("../../lib/field-sets/box-style");
+const { getBackgroundStyle } = require("../../lib/field-sets/background-style");
+const { getTextFontOptions, getTextStyle } = require("../../lib/field-sets/text-style");
 const columnsWidgetHelpers = require("../columns-widget/helpers");
 
 module.exports = {
@@ -17,9 +17,10 @@ module.exports = {
       isDev() {
         return process.env.NODE_ENV !== "production";
       },
-      getBackgroundStyle,
-      getTextStyle,
       getBoxStyle,
+      getBackgroundStyle,
+      getTextFontOptions,
+      getTextStyle,
       ...columnsWidgetHelpers,
     });
   },

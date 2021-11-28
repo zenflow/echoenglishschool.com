@@ -1,6 +1,6 @@
-const { getBackgroundStyleFields } = require("../../lib/style/background");
-const { getTextStyleFields } = require("../../lib/style/text");
-const { getBoxStyleFields } = require("../../lib/style/box");
+const { getBackgroundStyleFields } = require("../../lib/field-sets/background-style");
+const { getTextStyleFields } = require("../../lib/field-sets/text-style");
+const { getBoxStyleFields } = require("../../lib/field-sets/box-style");
 
 module.exports = {
   extend: "@apostrophecms/widget-type",
@@ -9,9 +9,9 @@ module.exports = {
   },
   fields: {
     add: {
+      ...getBoxStyleFields(),
       ...getBackgroundStyleFields(),
       ...getTextStyleFields(),
-      ...getBoxStyleFields(),
       main: {
         label: "Content",
         type: "area",

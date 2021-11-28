@@ -11,11 +11,10 @@ module.exports = {
         "strike",
         "link",
         // "highlight", // TODO: style <mark> element
-        // "codeBlock", // TODO: style <code> element
-        "|",
-        "alignLeft",
-        "alignCenter",
-        "alignRight",
+        // "|",
+        // "alignLeft",
+        // "alignCenter",
+        // "alignRight",
         "|",
         "bulletList",
         "orderedList",

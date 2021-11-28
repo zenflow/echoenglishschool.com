@@ -48,7 +48,7 @@ module.exports = {
               "space-evenly",
               "space-between",
               "space-around",
-            ].map((value) => ({ label: value, value })),
+            ].map((value) => ({ label: value.replace(/-/g, " "), value })),
           };
           return [name, config];
         }),

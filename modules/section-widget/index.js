@@ -1,5 +1,5 @@
-const { getBackgroundStyleFields } = require("../../lib/style/background");
-const { getTextStyleFields } = require("../../lib/style/text");
+const { getBackgroundStyleFields } = require("../../lib/field-sets/background-style");
+const { getTextStyleFields } = require("../../lib/field-sets/text-style");
 
 module.exports = {
   extend: "@apostrophecms/widget-type",

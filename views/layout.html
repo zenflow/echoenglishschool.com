@@ -19,8 +19,11 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon/apple-touch-icon.png">
-{% set fonts = ["Roboto", "Dosis", "Lato", "Raleway", "Quicksand", "Raleway", "Open+Sans", "Dosis", "Montserrat", "Nunito", "Asap"] %}
-<link href="https://fonts.googleapis.com/css2?{% for font in fonts %}family={{ font }}:wght@300;400;500;600;700&{% endfor %}display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?{% for font in apos.helper.getTextFontOptions() %}family={{ font.split(' ').join('+') }}:wght@300;400;500;600;700&{% endfor %}display=swap" rel="stylesheet">
+<style>
+  .font-demo { font-size: xx-large; }
+  {% for font in apos.helper.getTextFontOptions() %} .font-demo--{{ font.split(' ').join('-') }} { font-family: {{ apos.helper.jsonStringify(font) | safe }} } {% endfor %}
+</style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
 {% endblock %}
