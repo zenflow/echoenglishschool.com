@@ -35,7 +35,7 @@ module.exports = {
       },
       ...Object.fromEntries(
         Array.from({ length: schemesMaxColumns }).map((_, index) => {
-          const name = `column${index + 1}ContentPosition`;
+          const name = `column${index + 1}ContentJustify`;
           const config = {
             type: "select",
             if: getConditionForColumn(index),

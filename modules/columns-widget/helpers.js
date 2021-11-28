@@ -6,9 +6,9 @@ module.exports = {
   getColumnClass(widget, index) {
     const size = schemes[widget.scheme][index];
     const sizeClass = `col-${widget.breakpoint ? `${widget.breakpoint}-` : ""}${size}`;
-    const position = widget[`column${index + 1}ContentPosition`];
-    const positionClass = `column-content-position--${position}`;
-    return `${sizeClass} ${positionClass}`;
+    const justify = widget[`column${index + 1}ContentJustify`];
+    const justifyClass = `column-content-justify--${justify}`;
+    return `${sizeClass} ${justifyClass}`;
   },
   getColumnsStyle(widget) {
     const style = {};
