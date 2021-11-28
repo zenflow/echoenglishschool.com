@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
 
 {% set title = "Page Not Found" %}
+{% set verticalCenterContent = true %}
 
 {% block main %}
-  <div style="text-align: center">
-    <h1 style="margin-bottom: 1rem">404</h1>
-    <h3>The page you're looking for cannot be found.</h3>
+  <div style="padding: 2rem; text-align: center">
+    <h1>Sorry!</h1>
+    <h2>Page not found.</h2>
+    <p style="margin-top: 2rem;">Please visit our <a href="/">home page</a>.</h3>
   </div>
 {% endblock %}

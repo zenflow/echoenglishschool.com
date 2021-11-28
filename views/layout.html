@@ -1,6 +1,7 @@
 {% extends data.outerLayout %}
 
 {% set title = title or data.piece.title or data.page.title %}
+{% set verticalCenterContent = verticalCenterContent or false %}
 
 <!-- --- --- --- --- --- --- --- -->
 
@@ -15,9 +16,11 @@
 <!-- --- --- --- --- --- --- --- -->
 
 {% block startHead %}
-<!--<link rel="icon" href="/favicon.ico">-->
+<link rel="icon" type="image/png" sizes="16x16" href="/image/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/image/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/image/favicon/apple-touch-icon.png">
 {% set fonts = ["Roboto", "Dosis", "Lato", "Raleway", "Quicksand", "Raleway", "Open+Sans", "Dosis", "Montserrat", "Nunito", "Asap"] %}
-<link href="https://fonts.googleapis.com/css2?<% for font in fonts %>family={{ font }}:wght@300;400;500;600;700&<% endfor %>display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?{% for font in fonts %}family={{ font }}:wght@300;400;500;600;700&{% endfor %}display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
 {% endblock %}
@@ -25,10 +28,94 @@
 <!-- --- --- --- --- --- --- --- -->
 
 {% block beforeMain %}
-<main>
-  {% endblock %}
-  {% block afterMain %}
-</main>
+<div class="main-wrapper {% if verticalCenterContent %}vertical-center-content{% endif %}">
+  <!-- Nav Bar Start -->
+  <div class="navbar-container scrolled-to-top">
+    <div class="navbar navbar-expand-md navbar-light">
+      <div class="container-xl">
+        <a href="/" class="navbar-brand">
+          <img src="/image/logo/logo-square.png" alt="{{ data.global.siteTitle }}">
+          <span>{{ data.global.siteTitle }}</span>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="/#home" class="nav-link">Home</a>
+            <a href="/#course" class="nav-link">Course</a>
+            <a href="/#teacher" class="nav-link">Teacher</a>
+            <a href="/#enrolment" class="nav-link">Enrolment</a>
+            <a href="/#contact" class="nav-link">Contact</a>
+            {% if false %}
+            {% for section in apos.helper.filter(data.home.main.items, 'isLinkInNavbar') %}
+            <a href="{{ '/' if data.page.slug !== '/' }}#{{ section.name.toLowerCase() }}"
+               class="nav-link">{{ section.name }}</a>
+            {% endfor %}
+            {% endif%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Nav Bar End -->
+
+  <main>
+    {% endblock %}
+    {% block afterMain %}
+  </main>
+</div>
+<!-- Footer Start -->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer__description col-md-5">
+        <h2>{{ data.global.siteTitle }}</h2>
+        <p>ECHO English School offers online English lessons for students at every level.</p>
+        <p><a href="/#course">read more →</a></p>
+      </div>
+      <div class="footer__menu col-md-7">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>About</h2>
+            <ul class="list-unstyled">
+              <li><a href="/#course" class="">Course</a></li>
+              <li><a href="/#teacher" class="">Teacher</a></li>
+              <li><a href="/#enrolment" class="">Enrolment</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2>Contact</h2>
+            <ul class="list-unstyled">
+              <li><a href="/#contact" class="">Form</a></li>
+              <li><a target="_blank" href="mailto:admissions@echoenglishschool.com" class="">Email</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2>Social</h2>
+            <ul class="list-unstyled">
+              <li><a target="_blank" href="https://www.facebook.com/echoenghishschool" class="">Facebook</a></li>
+              <li><a target="_blank" href="http://instagram.com/echo_englishschool" class="">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="footer__copyright col-md-6 text-center text-md-left">
+        <p>© {{ data.global.siteTitle }}, All Right Reserved</p>
+      </div>
+      <div class="footer__legal col-md-6 text-center text-md-right">
+        <p>
+          <a target="_blank" href="/privacy-policy">Privacy Policy</a>
+          <a target="_blank" href="/terms-of-service">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
 {% endblock %}
 
 {% block extraBody %}
@@ -38,6 +125,10 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/wow.js@1.2.2/dist/wow.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js"></script>
+<script>
+  window.isLayout = true;
+  window.isEdit = {{ not not data.edit }};
+</script>
 {% if apos.helper.isDev() %}
 <script>
   window.data = {{ apos.helper.jsonStringify(data) | safe }};

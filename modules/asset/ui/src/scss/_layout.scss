@@ -1,0 +1,30 @@
+body,
+[data-apos-refreshable],
+.main-wrapper,
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-apos-refreshable],
+.main-wrapper,
+main {
+  flex-grow: 1;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  position: relative;
+
+  &.vertical-center-content {
+    main {
+      justify-content: center;
+    }
+  }
+}

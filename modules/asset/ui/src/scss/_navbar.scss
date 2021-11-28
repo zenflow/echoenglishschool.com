@@ -1,0 +1,57 @@
+.navbar-container {
+  position: relative;
+  padding-bottom: 74px;
+
+  &, * {
+    transition: all .3s ease-out;
+  }
+
+  .navbar {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+
+    .navbar-brand {
+      img {
+        padding-right: .5rem;
+        border-right: 1px solid silver;
+        margin-right: .5rem;
+        height: 48px;
+      }
+
+      span {
+        color: #666666;
+      }
+    }
+  }
+
+  &.scrolled-to-top {
+    .navbar {
+      position: absolute;
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .navbar-container .navbar .navbar-brand {
+    img {
+      padding-right: 0;
+      border-right: 0;
+      margin-right: 0;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-container .navbar .navbar-brand {
+    span {
+      font-size: 1rem;
+    }
+  }
+}
