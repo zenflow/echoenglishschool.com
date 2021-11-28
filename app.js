@@ -31,5 +31,6 @@ require("apostrophe")({
     "container-widget": {},
     "columns-widget": {},
     "image-widget": {},
+    "text-button-widget": {},
   },
 });
