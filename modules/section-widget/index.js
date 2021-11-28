@@ -27,6 +27,7 @@ module.exports = {
         options: {
           widgets: {
             container: {},
+            columns: {},
           },
         },
       },

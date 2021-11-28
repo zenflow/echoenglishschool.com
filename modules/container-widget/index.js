@@ -21,6 +21,7 @@ module.exports = {
             "@apostrophecms/image": {},
             "@apostrophecms/video": {},
             container: {},
+            columns: {},
           },
         },
       },

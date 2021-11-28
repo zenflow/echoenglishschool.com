@@ -1,0 +1,43 @@
+.columns-widget {
+  & > div {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      height: 100%;
+    }
+  }
+
+  & > div.column-content-position--center {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      justify-content: center;
+    }
+  }
+
+  & > div.column-content-position--start {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      justify-content: start;
+    }
+  }
+
+  & > div.column-content-position--end {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      justify-content: end;
+    }
+  }
+
+  & > div.column-content-position--space-evenly {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      justify-content: space-evenly;
+    }
+  }
+
+  & > div.column-content-position--space-between {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      justify-content: space-between;
+    }
+  }
+
+  & > div.column-content-position--space-around {
+    & > .apos-area, & > .apos-area > .apos-areas-widgets-list {
+      justify-content: space-around;
+    }
+  }
+}

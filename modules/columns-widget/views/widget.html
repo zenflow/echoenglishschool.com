@@ -1,0 +1,9 @@
+<div class="columns-widget row" style="{{ apos.helper.getColumnsStyle(data.widget) }}">
+  {% for index in [0, 1, 2] %}
+  {% if apos.helper.isColumnShown(data.widget, index) %}
+  <div class="{{ apos.helper.getColumnClass(data.widget, index) }}">
+    {% area data.widget, "column" + (index + 1) + "Content" %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
