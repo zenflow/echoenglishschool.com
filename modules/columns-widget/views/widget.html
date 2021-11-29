@@ -1,4 +1,5 @@
-<div class="columns-widget row" style="{{ apos.helper.getColumnsStyle(data.widget) }}">
+<div class="columns-widget row"
+     style="{{apos.helper.getColumnsStyle(data.widget) + apos.helper.getStyleFieldSetStyles(apos, data.widget, ['margin']) }}">
   {% for index in [0, 1, 2] %}
   {% if apos.helper.isColumnShown(data.widget, index) %}
   <div class="{{ apos.helper.getColumnClass(data.widget, index) }}">

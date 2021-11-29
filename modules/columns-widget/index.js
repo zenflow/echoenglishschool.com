@@ -1,4 +1,5 @@
 const { schemes, schemesMinColumns, schemesMaxColumns } = require("./schemes");
+const { getStyleFieldSetFields } = require("../../lib/field-sets/style");
 
 module.exports = {
   extend: "@apostrophecms/widget-type",
@@ -53,6 +54,7 @@ module.exports = {
           return [name, config];
         }),
       ),
+      ...getStyleFieldSetFields("margin"),
       ...Object.fromEntries(
         Array.from({ length: schemesMaxColumns }).map((_, index) => {
           const name = `column${index + 1}Content`;

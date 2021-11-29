@@ -19,6 +19,7 @@ module.exports = {
         required: true,
         def: "/#contact",
       },
+      ...getStyleFieldSetFields("margin"),
       ...getStyleFieldSetFields("box", {
         def: { boxAlignment: "center", boxCornerRadius: 1 },
       }),

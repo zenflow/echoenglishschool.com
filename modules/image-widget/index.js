@@ -1,3 +1,4 @@
+const { getStyleFieldSetFields } = require("../../lib/field-sets/style");
 module.exports = {
   extend: "@apostrophecms/widget-type",
   options: {
@@ -13,6 +14,7 @@ module.exports = {
         required: true,
         withType: "@apostrophecms/image",
       },
+      ...getStyleFieldSetFields("margin"),
     },
   },
 };

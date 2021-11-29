@@ -7,6 +7,7 @@ module.exports = {
   },
   fields: {
     add: {
+      ...getStyleFieldSetFields("margin"),
       ...getStyleFieldSetFields("box"),
       ...getStyleFieldSetFields("background"),
       ...getStyleFieldSetFields("text"),
