@@ -3,9 +3,7 @@
 {# TODO: make css variable for magic number 74px #}
 {% endif %}
 
-{% set style = apos.helper.getBackgroundStyle(apos, data.widget)
-  + apos.helper.getTextStyle(apos, data.widget) %}
-<div class="section-widget" style="{{ style }}">
+<div class="section-widget" style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['background', 'text']) }}">
   <div class="container">
     {% area data.widget, 'main' %}
   </div>

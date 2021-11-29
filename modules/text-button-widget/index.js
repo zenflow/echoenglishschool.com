@@ -1,6 +1,4 @@
-const { getBoxStyleFields } = require("../../lib/field-sets/box-style");
-const { getBackgroundStyleFields } = require("../../lib/field-sets/background-style");
-const { getTextStyleFields } = require("../../lib/field-sets/text-style");
+const { getStyleFieldSetFields } = require("../../lib/field-sets/style");
 
 module.exports = {
   extend: "@apostrophecms/widget-type",
@@ -21,13 +19,13 @@ module.exports = {
         required: true,
         def: "/#contact",
       },
-      ...getBoxStyleFields({
+      ...getStyleFieldSetFields("box", {
         def: { boxAlignment: "center", boxCornerRadius: 1 },
       }),
-      ...getBackgroundStyleFields({
+      ...getStyleFieldSetFields("background", {
         def: { backgroundColor: "#ffd901" },
       }),
-      ...getTextStyleFields({
+      ...getStyleFieldSetFields("text", {
         def: { textColor: "#000000", textAlign: "center", textFont: "Roboto" },
       }),
     },

@@ -1,9 +1,5 @@
-{% set style = apos.helper.getBoxStyle(apos, data.widget)
-  + apos.helper.getBackgroundStyle(apos, data.widget)
-  + apos.helper.getTextStyle(apos, data.widget) %}
-
 <div class="container-widget d-flex flex-column">
-  <div style="{{ style }}">
+  <div style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['box', 'background', 'text']) }}">
     {% area data.widget, 'main' %}
   </div>
 </div>

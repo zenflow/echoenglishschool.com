@@ -1,9 +1,6 @@
-{% set style = apos.helper.getBoxStyle(apos, data.widget)
-  + apos.helper.getBackgroundStyle(apos, data.widget)
-  + apos.helper.getTextStyle(apos, data.widget) %}
-
 <div class="text-button-widget d-flex flex-column">
-  <a class="d-block" style="{{ style }}" href="{{ data.widget.link }}">
+  <a class="d-block" style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['box', 'background', 'text']) }}"
+     href="{{ data.widget.link }}">
     {{ data.widget.text }}
   </a>
 </div>
