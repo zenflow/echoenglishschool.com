@@ -18,6 +18,8 @@ body {
   font-size: 1.2rem;
   color: black;
   --my-text-color: black; // can be used by non-text elements
+  line-height: 1.5;
+  --my-line-height: 1.5;
 }
 
 .main-wrapper {

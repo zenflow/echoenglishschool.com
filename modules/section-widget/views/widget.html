@@ -2,7 +2,8 @@
 <div class="section-widget-anchor" id="{{ apos.util.slugify(data.widget.name) }}"></div>
 {% endif %}
 
-<div class="section-widget" style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['background', 'text']) }}">
+<div class="section-widget py-3"
+     style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['background', 'text']) }}">
   <div class="container">
     {% area data.widget, 'main' %}
   </div>

@@ -9,6 +9,11 @@
   min-height: unset !important;
 }
 
+/* TODO: This shouldn't be needed. A rule in apos admin bundle changes line-height for this selector though */
+[class*=apos-] {
+  line-height: var(--my-line-height) !important;
+}
+
 .apos-area, .apos-areas-widgets-list {
   display: flex;
   flex-direction: column;
