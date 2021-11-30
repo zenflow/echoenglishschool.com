@@ -1,6 +1,5 @@
 {% if data.widget.isLinkInNavbar %}
-<div id="{{ data.widget.name.toLowerCase() }}" style="position: relative; top: -74px"></div>
-{# TODO: make css variable for magic number 74px #}
+<div class="section-widget-anchor" id="{{ apos.util.slugify(data.widget.name) }}"></div>
 {% endif %}
 
 <div class="section-widget" style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['background', 'text']) }}">

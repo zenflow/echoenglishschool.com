@@ -1,6 +1,6 @@
 {% extends data.outerLayout %}
 
-{% set title = title or data.piece.title or data.page.title %}
+{% set title = title if title !== undefined else data.piece.title or data.page.title %}
 {% set verticalCenterContent = verticalCenterContent or false %}
 
 <!-- --- --- --- --- --- --- --- -->
@@ -31,9 +31,9 @@
 <!-- --- --- --- --- --- --- --- -->
 
 {% block beforeMain %}
-<div class="main-wrapper {% if verticalCenterContent %}vertical-center-content{% endif %}">
+<div class="main-wrapper {{ 'is-apos-edit' if data.edit }} {{ 'vertical-center-content' if verticalCenterContent }}">
   <!-- Nav Bar Start -->
-  <div class="navbar-container scrolled-to-top">
+  <div class="navbar-container">
     <div class="navbar navbar-expand-md navbar-light">
       <div class="container-xl">
         <a href="/" class="navbar-brand">
@@ -45,17 +45,13 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav ml-auto">
-            <a href="/#home" class="nav-link">Home</a>
-            <a href="/#courses" class="nav-link">Courses</a>
-            <a href="/#teacher" class="nav-link">Teacher</a>
-            <a href="/#get-started" class="nav-link">Get Started</a>
-            <a href="/#contact" class="nav-link">Contact</a>
-            {% if false %}
-            {% for section in apos.helper.filter(data.home.main.items, 'isLinkInNavbar') %}
-            <a href="{{ '/' if data.page.slug !== '/' }}#{{ section.name.toLowerCase() }}"
-               class="nav-link">{{ section.name }}</a>
+            {% set _ = apos.helper.lodash() %}
+            {% for section in _.filter(data.home.main.items, 'isLinkInNavbar') %}
+            {% set href = '#' + apos.util.slugify(section.name) %}
+            {# include path part only if not on home, enabling bootstrap scroll-spy on home #}
+            {% if data.page.slug !== '/' %}{% set href = '/' + href %}{% endif %}
+            <a href="{{ href }}" class="nav-link">{{ section.name }}</a>
             {% endfor %}
-            {% endif%}
           </div>
         </div>
       </div>
@@ -129,8 +125,8 @@
 <script src="https://cdn.jsdelivr.net/npm/wow.js@1.2.2/dist/wow.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/waypoints@4.0.1/lib/jquery.waypoints.min.js"></script>
 <script>
-  window.isLayout = true;
-  window.isEdit = {{ not not data.edit }};
+  window.isAposLayout = true;
+  window.isAposEdit = {{ not not data.edit }};
 </script>
 {% if apos.helper.isDev() %}
 <script>

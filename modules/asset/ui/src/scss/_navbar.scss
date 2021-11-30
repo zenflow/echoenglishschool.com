@@ -1,6 +1,10 @@
+:root {
+  --my-navbar-height: 74px;
+}
+
 .navbar-container {
   position: relative;
-  padding-bottom: 74px;
+  padding-bottom: var(--my-navbar-height);
 
   &, * {
     transition: all .3s ease-out;
@@ -14,6 +18,8 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 
     .navbar-brand {
+      color: rgba(0,0,0,.5);
+
       img {
         padding-right: .5rem;
         border-right: 1px solid silver;
@@ -21,15 +27,17 @@
         height: 48px;
       }
 
-      span {
-        color: #666666;
+      &:hover {
+        color: rgba(0, 0, 0, .9)
       }
     }
-  }
 
-  &.scrolled-to-top {
-    .navbar {
-      position: absolute;
+    .nav-link {
+      border-bottom: 4px solid transparent;
+
+      &.active {
+        border-color: rgba(0, 0, 0, .9);
+      }
     }
   }
 }
@@ -53,5 +61,11 @@
     span {
       font-size: 1rem;
     }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar-container .navbar .nav-link {
+    margin-left: auto;
   }
 }

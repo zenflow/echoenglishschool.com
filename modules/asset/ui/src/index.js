@@ -1,19 +1,11 @@
-/* global WOW, $ */
+/* global WOW, $, apos */
 
 export default function main() {
-  if (!window.isLayout) return;
+  if (!window.isAposLayout) return;
 
   new WOW().init();
 
   // Begin Navbar
-
-  const updateScrolledToTop = () => {
-    $(".navbar-container").toggleClass("scrolled-to-top", $("html").scrollTop() === 0);
-  };
-  $(window).scroll(updateScrolledToTop);
-  $(document).ready(updateScrolledToTop);
-
-  /*
   const isOnHomePage = window.location.pathname === "/";
   if (isOnHomePage) {
     const baseTitle = window.document.title;
@@ -35,24 +27,31 @@ export default function main() {
     }
     $(document).ready(function () {
       updateState(hash);
-      if (!window.isEdit) scrollTo(hash);
+      // uncomment below if sometime the layout flow starts changing during loading
+      // if (!window.isAposEdit) scrollTo(hash);
     });
 
     $("body").scrollspy({
       spy: "scroll",
       target: ".navbar",
-      offset: 100,
+      offset: 50,
     });
     $(window).on("activate.bs.scrollspy", function (event) {
       updateState($(".navbar a.nav-link.active").attr("href"));
     });
 
-    $(".navbar .navbar-nav a").on("click", function (event) {
-      event.preventDefault();
-      scrollTo(this.hash);
-      $(".navbar .navbar-collapse").collapse("hide");
-    });
+    apos.util.widgetPlayers.navbar = {
+      selector: ".navbar",
+      player(element) {
+        $(element)
+          .find(".navbar-nav a")
+          .on("click", function (event) {
+            event.preventDefault();
+            scrollTo(this.hash);
+            $(".navbar .navbar-collapse").collapse("hide");
+          });
+      },
+    };
   }
-  */
   // End Navbar
 }
