@@ -1,5 +1,11 @@
 .bp-rich-text-widget {
-  p, h1, h2, h3, h4, h5, h6, ul, ol, hr {
+  p, h1, h2, h3, h4, h5, h6, ul, ol {
     margin: 0;
+
+    &:not(:first-child):not(:last-child) > br {
+      display: block;
+      content: " ";
+      height: calc(.5em * var(--my-line-height));
+    }
   }
 }
