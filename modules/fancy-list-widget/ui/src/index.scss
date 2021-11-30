@@ -1,0 +1,28 @@
+.fancy-list-widget {
+  .fancy-list-widget__item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .row {
+      .fancy-list-widget__icon {
+        padding: 0 0 0 1rem;
+        font-size: var(--my-icon-size);
+        color: var(--my-icon-color);
+      }
+
+      .fancy-list-widget__text {
+        padding: 0 1rem 0 1rem;
+      }
+    }
+  }
+
+  &.fancy-list-widget__icon-circles {
+    .fancy-list-widget__item .row .fancy-list-widget__icon {
+      i {
+        border: .1em solid var(--my-icon-color);
+        padding: .3em;
+        border-radius: 9em;
+      }
+    }
+  }
+}

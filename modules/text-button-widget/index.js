@@ -24,7 +24,7 @@ module.exports = {
         def: { boxAlignment: "center", boxCornerRadius: 1 },
       }),
       ...getStyleFieldSetFields("background", {
-        def: { backgroundColorScheme: "solid color", backgroundColor: "#ffd901" },
+        def: { backgroundColorScheme: "solid", backgroundColor: "#ffd901" },
       }),
       ...getStyleFieldSetFields("text", {
         def: { textColor: "#000000", textAlign: "center", textFont: "Roboto" },

@@ -13,7 +13,8 @@ module.exports = {
         def: false,
       },
       name: {
-        label: "Name",
+        label: "Section Name",
+        help: "Appears in the navbar & the browser title",
         type: "string",
         required: true,
         if: { isLinkInNavbar: true },

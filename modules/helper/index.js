@@ -1,7 +1,9 @@
 const lodash = require("lodash");
 const { getStyleFieldSetStyles } = require("../../lib/field-sets/style/index");
 const { getTextFontOptions } = require("../../lib/field-sets/style/text");
+const { getIconFieldClasses } = require("../../lib/field-sets/icon");
 const columnsWidgetHelpers = require("../columns-widget/helpers");
+const fancyListWidgetHelpers = require("../fancy-list-widget/helpers");
 
 module.exports = {
   options: {
@@ -20,7 +22,9 @@ module.exports = {
       },
       getStyleFieldSetStyles,
       getTextFontOptions,
+      getIconFieldClasses,
       ...columnsWidgetHelpers,
+      ...fancyListWidgetHelpers,
     });
   },
 };

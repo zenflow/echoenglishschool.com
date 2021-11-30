@@ -1,0 +1,29 @@
+{% set itemElements = data.widget.itemElements.split('+') if data.widget.itemElements else []%}
+{% set showIcon = itemElements.includes('icon') %}
+{% set showHeading = itemElements.includes('heading') %}
+{% set showBody = itemElements.includes('body') %}
+
+<div class="fancy-list-widget {{ 'fancy-list-widget__icon-circles' if data.widget.iconCircles }}"
+     style="{{ apos.helper.getFancyListStyle(data.widget) + apos.helper.getStyleFieldSetStyles(apos, data.widget, ['margin']) }}">
+  <div class="{{ 'row' if data.widget.numberOfColumns > 1}}">
+  {% for item in data.widget.items %}
+  <div class="fancy-list-widget__item {{ apos.helper.getFancyListItemClass(data.widget, loop.index0) }}">
+    <div class="row flex-nowrap">
+      {% if showIcon %}
+      <div class="fancy-list-widget__icon col-auto">
+        <i class="{{ apos.helper.getIconFieldClasses(item.icon) or apos.helper.getIconFieldClasses(data.widget.defaultIcon) }}"></i>
+      </div>
+      {% endif %}
+      <div class="fancy-list-widget__text col">
+      {% if showHeading %}
+      <h4>{{ item.heading }}</h4>
+      {% endif %}
+      {% if showBody %}
+      {% area item, "body" %}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
