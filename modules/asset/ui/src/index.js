@@ -4,7 +4,7 @@ function scrollTo(element) {
   const offset = $(element).offset();
   if (!offset) return;
   const scrollTop = Math.max(offset.top, 0);
-  $("html").animate({ scrollTop }, 1000, "easeOutCubic");
+  $("html, body").animate({ scrollTop }, 1000, "easeOutCubic");
 }
 
 export default function main() {
