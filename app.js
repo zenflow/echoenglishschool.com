@@ -24,5 +24,6 @@ require("apostrophe")({
     "image-widget": {},
     "text-button-widget": {},
     "fancy-list-widget": {},
+    "form-widget": {},
   },
 });

@@ -1,0 +1,88 @@
+@import "../../../../lib/scss/_my-button";
+
+.form-widget {
+  position: relative;
+
+  form {
+    opacity: 1;
+    transition: all .3s;
+
+    .form-widget__fields {
+      .input-group {
+        margin-bottom: 1rem;
+
+        .input-group-prepend .input-group-text {
+          align-items: start;
+          padding: .75rem 1rem;
+        }
+
+        .form-control {
+          z-index: auto;
+        }
+
+        &.required::after {
+          content: "*";
+          position: absolute;
+          top: 0;
+          right: .2em;
+          font-size: 1.5em;
+          font-weight: bolder;
+          color: red;
+        }
+      }
+    }
+
+    .form-widget__submit {
+      font-weight: bold;
+      @include my-button($hover-scale: 1.04);
+    }
+  }
+
+  .form-widget__overlay {
+    display: none;
+  }
+
+  &.with-overlay {
+    form {
+      opacity: .3;
+    }
+
+    .form-widget__overlay {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+
+      .spinner-border {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .result-success, .result-failure {
+        display: none;
+        text-align: center;
+
+        i {
+          font-size: 4rem;
+        }
+
+        p {
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+
+      .result-success i {
+        color: green;
+      }
+
+      .result-failure i {
+        color: red;
+      }
+    }
+  }
+}

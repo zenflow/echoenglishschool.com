@@ -1,0 +1,53 @@
+<div class="form-widget" data-form-name="{{ data.widget.formName }}" data-email-to="{{ data.widget.emailTo }}">
+  <form autocomplete="off">
+    <div class="form-widget__fields">
+      {% for field in data.widget.fields %}
+      <div class="input-group input-group-lg {{ 'required' if field.required }}">
+        {% if field.icon %}
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="{{ apos.helper.getIconFieldClasses(field.icon) }}"></i>
+          </div>
+        </div>
+        {% endif %}
+        {% if ['text', 'email', 'tel'].includes(field.type) %}
+        <input class="form-control"
+               name="{{ field.label }}"
+               placeholder="{{ field.label }}"
+               aria-label="{{ field.label }}"
+               {% if field.required %} required="required" {% endif %}
+               autocomplete="{{ 'on' if ['email', 'tel'].includes(field.type) else 'off'}}"
+               type="{{ field.type }}">
+        {% elseif field.type === 'textarea' %}
+        <textarea class="form-control"
+                  name="{{ field.label }}"
+                  placeholder="{{ field.label }}"
+                  aria-label="{{ field.label }}"
+                  {% if field.required %} required="required" {% endif %}
+                  rows="{{ field.rows }}"
+        ></textarea>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% set textColor = data.widget.submitButtonTextColor %}
+    {% set bgColor = data.widget.submitButtonBackgroundColor %}
+    <button type="submit" class="form-widget__submit btn btn-lg btn-block"
+            style="{% if textColor %}color: {{ textColor }}; {% endif %}{% if bgColor %}background-color: {{ bgColor }}; {% endif %}">
+      {{ data.widget.submitButtonText }}
+    </button>
+  </form>
+  <div class="form-widget__overlay">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="result-success">
+      <i class="fas fa-check"></i>
+      {% for line in data.widget.successText.split('\n') %}<p>{{ line }}</p>{% endfor %}
+    </div>
+    <div class="result-failure">
+      <i class="fas fa-times"></i>
+      {% for line in data.widget.failureText.split('\n') %}<p>{{ line }}</p>{% endfor %}
+    </div>
+  </div>
+</div>

@@ -20,6 +20,7 @@ module.exports = {
             image: {},
             "text-button": {},
             "fancy-list": {},
+            form: {},
             container: {},
             columns: {},
           },

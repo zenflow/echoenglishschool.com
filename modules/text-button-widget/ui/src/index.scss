@@ -1,13 +1,9 @@
+@import "../../../../lib/scss/_my-button";
+
 .text-button-widget {
   a {
     font-weight: bold;
     text-decoration: none;
-    transition: all .3s;
-    filter: brightness(1);
-
-    &:hover {
-      filter: brightness(.7);
-      transform: scale(1.1);
-    }
+    @include my-button;
   }
 }
