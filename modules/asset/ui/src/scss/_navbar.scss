@@ -34,6 +34,7 @@
 
     .nav-link {
       border-bottom: 4px solid transparent;
+      white-space: nowrap;
 
       &.active {
         border-color: rgba(0, 0, 0, .9);

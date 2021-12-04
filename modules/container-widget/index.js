@@ -16,13 +16,14 @@ module.exports = {
         type: "area",
         options: {
           widgets: {
+            container: {},
+            columns: {},
             "@apostrophecms/rich-text": {},
             image: {},
             "text-button": {},
             "fancy-list": {},
             form: {},
-            container: {},
-            columns: {},
+            timeline: {},
           },
         },
       },

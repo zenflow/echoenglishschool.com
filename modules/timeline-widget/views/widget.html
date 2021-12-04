@@ -1,0 +1,21 @@
+<div class="timeline-widget container">
+  {% for step in data.widget.steps %}
+  <div class="row">
+    <div class="col-md-10 col-lg-9 col-xl-8 m-auto">
+      <div class="timeline-widget__step">
+        {% if not loop.last %}
+        <div class="timeline-widget__step-line"></div>
+        {% endif %}
+        <div class="timeline-widget__step-dot"></div>
+        <div class="timeline-widget__step-arrow"></div>
+        <div class="timeline-widget__step-label" style="background-color: {{ step.labelColor }}">
+          {{ step.labelText }}
+        </div>
+        <div class="timeline-widget__step-main">
+          {% area step, 'main' %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
