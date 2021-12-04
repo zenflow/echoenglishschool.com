@@ -4,7 +4,7 @@
 
 <div class="section-widget py-3"
      style="{{ apos.helper.getStyleFieldSetStyles(apos, data.widget, ['background', 'text']) }}">
-  <div class="container-xl">
+  <div class="{{ 'container-fluid' if data.widget.fullScreenWidthContent else 'container-xl' }}">
     {% area data.widget, 'main' %}
   </div>
 </div>

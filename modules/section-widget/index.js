@@ -19,6 +19,12 @@ module.exports = {
         required: true,
         if: { isLinkInNavbar: true },
       },
+      fullScreenWidthContent: {
+        label: "Full Screen-Width Content",
+        help: "Content will be full width of screen, even on extra large screens",
+        type: "boolean",
+        def: false,
+      },
       ...getStyleFieldSetFields("background"),
       ...getStyleFieldSetFields("text"),
       main: {

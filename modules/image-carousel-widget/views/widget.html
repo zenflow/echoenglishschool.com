@@ -1,0 +1,13 @@
+{% set images = apos.image.all(data.widget._images) %}
+
+<div class="image-carousel-widget" data-seconds-per-image="{{ data.widget.secondsPerImage }}">
+  <div class="carousel">
+    {% for image in images %}
+    <div class="slick-slide">
+      <img srcset="{{ apos.image.srcset(image) }}"
+           src="{{ apos.attachment.url(image, { size: 'full' }) }}"
+           alt="{{ image._alt or '' }}">
+    </div>
+    {% endfor %}
+  </div>
+</div>

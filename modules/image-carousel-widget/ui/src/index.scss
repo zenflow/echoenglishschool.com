@@ -1,0 +1,61 @@
+.image-carousel-widget {
+  padding: 1rem 0;
+
+  .slick-slide {
+    transition: all .5s ease;
+    opacity: 0;
+    transform: scale(.90);
+
+    &:focus {
+      outline: 0 !important;
+    }
+
+    &.slick-current {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    img {
+      height: 50vh;
+      width: auto;
+      max-width: 80vw;
+      object-fit: contain;
+      border-radius: .5rem;
+    }
+  }
+
+  .slick-dots {
+    margin: 0;
+    padding: 1rem 0 0 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      cursor: pointer;
+
+      button {
+        font-size: 0;
+        line-height: 0;
+        cursor: pointer;
+        color: transparent;
+        border: 0;
+        background-color: var(--my-text-color);
+        margin: 0 .75rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 9rem;
+        transition: all .5s ease;
+        opacity: .25;
+
+        &:focus {
+          outline: 0!important;
+        }
+      }
+
+      &.slick-active button, button:hover {
+        opacity: .75;
+      }
+    }
+  }
+}

@@ -24,6 +24,7 @@ module.exports = {
             "fancy-list": {},
             form: {},
             timeline: {},
+            "image-carousel": {},
           },
         },
       },
