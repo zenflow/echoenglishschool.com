@@ -26,28 +26,19 @@ export default function main() {
 
     // begin scrollspy
     const baseTitle = window.document.title;
-    const updateState = (hash) => {
+    function updateState() {
+      const hash = $(".navbar a.nav-link.active").attr("href");
       window.history.replaceState({}, "", hash);
       const title = $(`.navbar a.nav-link[href="${hash}"]`).text();
       window.document.title = title ? `${title} | ${baseTitle}` : baseTitle;
-    };
-    let hash = window.location.hash;
-    if ($(`.navbar a.nav-link[href="${hash}"]`).length === 0) {
-      hash = $(`.navbar a.nav-link[href]`).attr("href");
     }
-    $(document).ready(function () {
-      updateState(hash);
-      // uncomment below if sometime the layout flow starts changing during loading
-      // if (!window.isAposEdit) scrollTo(hash);
-    });
+    $(document).ready(updateState);
     $("body").scrollspy({
       spy: "scroll",
       target: ".navbar",
       offset: 50,
     });
-    $(window).on("activate.bs.scrollspy", function (event) {
-      updateState($(".navbar a.nav-link.active").attr("href"));
-    });
+    $(window).on("activate.bs.scrollspy", updateState);
     // end scrollspy
   }
 }

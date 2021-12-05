@@ -34,7 +34,7 @@
 {% block beforeMain %}
 <div class="main-wrapper {{ 'is-apos-edit' if data.edit }} {{ 'vertical-center-content' if verticalCenterContent }}">
   <!-- Nav Bar Start -->
-  <div class="navbar-container">
+  <div class="navbar-container" id="_">
     <div class="navbar navbar-expand-md navbar-light">
       <div class="container-xl">
         <a href="/" class="navbar-brand">
@@ -46,6 +46,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav ml-auto">
+            <a href="#_" class="nav-link d-none"></a>
             {% set _ = apos.helper.lodash() %}
             {% for section in _.filter(data.home.main.items, 'isLinkInNavbar') %}
             {% set href = '#' + apos.util.slugify(section.name) %}
