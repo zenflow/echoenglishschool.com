@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="section-preview-page-index">
+  <div class="container-xl">
+    <h4 class="m-0 py-4">{{ data.page.title}}</h4>
+    <ul>
+      {% for piece in data.pieces %}
+      <li><a href="{{ piece._url }}">{{ piece.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

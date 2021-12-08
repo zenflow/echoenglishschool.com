@@ -3,7 +3,7 @@ const { getStyleFieldSetFields } = require("../../lib/field-sets/style");
 module.exports = {
   extend: "@apostrophecms/widget-type",
   options: {
-    label: "Section",
+    label: "Block", // TODO: actually rename to 'block-widget'
   },
   fields: {
     add: {

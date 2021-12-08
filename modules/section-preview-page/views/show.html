@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% set title = data.piece.title + " | " + data.page.title %}
+{% block main %}
+<div class="section-preview-page-show">
+  <div class="container-xl">
+    <h4 class="m-0 py-4"><a href="{{ data.page._url }}">{{ data.page.title }}</a> » {{ data.piece.title }}</h4>
+  </div>
+  {% area data.piece, 'main' %}
+</div>
+{% endblock %}
