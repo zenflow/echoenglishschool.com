@@ -3,5 +3,10 @@
 {% set title = false %}
 
 {% block main %}
-{% area data.page, 'main' %}
+{% for section in data.sections %}
+{% if section.isLinkInNavbar %}
+<div class="anchor" id="{{ apos.util.slugify(section.title) }}"></div>
+{% endif %}
+{% area section, 'main' %}
+{% endfor %}
 {% endblock %}

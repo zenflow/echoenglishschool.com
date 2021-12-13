@@ -7,18 +7,6 @@ module.exports = {
   },
   fields: {
     add: {
-      isLinkInNavbar: {
-        label: "Show link in navbar",
-        type: "boolean",
-        def: false,
-      },
-      name: {
-        label: "Section Name",
-        help: "Appears in the navbar & the browser title",
-        type: "string",
-        required: true,
-        if: { isLinkInNavbar: true },
-      },
       fullScreenWidthContent: {
         label: "Full Screen-Width Content",
         help: "Content will be full width of screen, even on extra large screens",

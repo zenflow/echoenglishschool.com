@@ -11,9 +11,6 @@ module.exports = {
   },
   init(self) {
     self.addHelpers({
-      lodash() {
-        return lodash;
-      },
       jsonStringify(o) {
         return JSON.stringify(o);
       },

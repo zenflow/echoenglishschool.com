@@ -47,12 +47,8 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav ml-auto">
             <a href="#_" class="nav-link d-none"></a>
-            {% set _ = apos.helper.lodash() %}
-            {% for section in _.filter(data.home.main.items, 'isLinkInNavbar') %}
-            {% set href = '#' + apos.util.slugify(section.name) %}
-            {# include path part only if not on home, enabling bootstrap scroll-spy on home #}
-            {% if data.page.slug !== '/' %}{% set href = '/' + href %}{% endif %}
-            <a href="{{ href }}" class="nav-link">{{ section.name }}</a>
+            {% for link in data.navLinks %}
+            <a href="{{ link.href }}" class="nav-link">{{ link.text }}</a>
             {% endfor %}
           </div>
         </div>
