@@ -34,7 +34,7 @@
 {% block beforeMain %}
 <div class="main-wrapper {{ 'is-apos-edit' if data.edit }} {{ 'vertical-center-content' if verticalCenterContent }}">
   <!-- Nav Bar Start -->
-  <div class="navbar-container" id="_">
+  <div class="navbar-container">
     <div class="navbar navbar-expand-md navbar-light">
       <div class="container-xl">
         <a href="/" class="navbar-brand">
@@ -60,7 +60,7 @@
     </div>
   </div>
   <!-- Nav Bar End -->
-
+  <div class="anchor" id="_"></div>
   <main>
     {% endblock %}
     {% block afterMain %}
