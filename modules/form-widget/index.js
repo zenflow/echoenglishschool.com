@@ -103,7 +103,7 @@ module.exports = {
           const options = {
             from: { name: hostname, address: `no-reply@${hostname}` },
             to: emailTo,
-            subject: `${hostname} Form Submission - ${formName}`,
+            subject: `Form Submission - ${formName}`,
           };
           try {
             await self.email(req, "emailSubmission", data, options);
