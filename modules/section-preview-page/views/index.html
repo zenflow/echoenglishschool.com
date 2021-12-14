@@ -2,8 +2,12 @@
 
 {% block main %}
 <div class="section-preview-page-index">
-  <div class="container-xl">
-    <h4 class="m-0 py-4">{{ data.page.title}}</h4>
+  <div class="bg-light">
+    <div class="container-xl py-4">
+      <h4 class="m-0">{{ data.page.title }}</h4>
+    </div>
+  </div>
+  <div class="container-xl py-4">
     <ul>
       {% for piece in data.pieces %}
       <li><a href="{{ piece._url }}">{{ piece.title }}</a></li>
