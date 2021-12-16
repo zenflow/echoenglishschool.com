@@ -1,0 +1,30 @@
+<div class="accordion-widget">
+  {% set accordionId = apos.util.generateId() %}
+  <div class="accordion" id="{{ accordionId }}">
+    {% for item in data.widget.items %}
+    {% set headingId = accordionId + '-heading-' + loop.index %}
+    {% set collapseId = accordionId + '-collapse-' + loop.index %}
+    <div class="card" style="background-color: {{ data.widget.backgroundColor }};">
+      <div class="card-header" id="{{ headingId }}"
+           style="background-color: transparent">
+        <button class="btn btn-block text-left" type="button" data-toggle="collapse"
+                data-target="#{{ collapseId }}" aria-controls="{{ collapseId }}">
+          {% if data.widget.headingIcon %}
+          <i class="{{ apos.helper.getIconFieldClasses(data.widget.headingIcon) }}"
+             style="color: {{ data.widget.headingIconColor }};"></i>
+          {% endif %}
+          <span style="color: {{ data.widget.headingTextColor }};">
+            {{ item.title }}
+          </span>
+        </button>
+      </div>
+      <div id="{{ collapseId }}" class="collapse" aria-labelledby="{{ headingId }}" data-parent="#{{ accordionId }}"
+           style="background-color: {{ data.widget.contentBackgroundColor }}; color: {{ data.widget.contentTextColor }};">
+        <div class="card-body">
+          {% area item, 'main' %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

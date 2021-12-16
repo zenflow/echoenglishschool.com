@@ -1,0 +1,19 @@
+.accordion-widget {
+  .card-header {
+    & > .btn {
+      &:focus {
+        box-shadow: none;
+      }
+
+      i {
+        font-size: 1.5em;
+      }
+
+      span {
+        margin-left: 1em;
+        font-size: 1.25em;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -23,6 +23,7 @@ module.exports = {
             "text-button": {},
             "fancy-list": {},
             form: {},
+            accordion: {},
             timeline: {},
             "image-carousel": {},
           },

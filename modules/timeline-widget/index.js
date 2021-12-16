@@ -30,6 +30,7 @@ module.exports = {
               options: {
                 widgets: {
                   "@apostrophecms/rich-text": {},
+                  image: {},
                   "text-button": {},
                 },
               },
