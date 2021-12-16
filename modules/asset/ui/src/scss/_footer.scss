@@ -24,16 +24,12 @@
     border-color: rgba(255, 255, 255, 0.1);
   }
 
-  .footer__description {
+  .footer_blurb {
     margin: 1rem 0;
     font-size: 1.1rem;
-
-    & > p:last-child {
-      margin-bottom: 0;
-    }
   }
 
-  .footer__menu {
+  .footer__link-lists {
     .row > div {
       margin: 1rem 0;
       border-left: 1px solid rgba(255, 255, 255, 0.1);
@@ -48,7 +44,7 @@
     font-size: .9rem;
   }
 
-  .footer__legal {
+  .footer__legal-links {
     font-size: .9rem;
     a {
       margin-left: 1rem;

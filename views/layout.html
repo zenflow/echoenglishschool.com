@@ -66,47 +66,41 @@
 <div class="footer">
   <div class="container">
     <div class="row">
-      <div class="footer__description col-md-5">
-        <h2>{{ data.global.siteTitle }}</h2>
-        <p>ECHO English School offers online English lessons for students at every level.</p>
-        <p><a href="/#courses">read more →</a></p>
+      <div class="footer_blurb col-md-5">
+        <h2>{{ data.global.footerBlurbTitle }}</h2>
+        {% area data.global, "footerBlurbContent" %}
       </div>
-      <div class="footer__menu col-md-7">
+      <div class="footer__link-lists col-md-7">
         <div class="row">
-          <div class="col-md-4">
-            <h2>About</h2>
+          {% for linkList in data.global.footerLinkLists %}
+          <div class="col-md">
+            <h2>{{ linkList.title }}</h2>
             <ul class="list-unstyled">
-              <li><a href="/#courses" class="">Courses</a></li>
-              <li><a href="/#teacher" class="">Teacher</a></li>
-              <li><a href="/#get-started" class="">Get Started</a></li>
+              {% for link in linkList.links %}
+              <li>
+                <a href="{{ link.url }}" target="{{ '_blank' if link.openLinkInNewWindow else '_self' }}">
+                  {{ link.text }}
+                </a>
+              </li>
+              {% endfor %}
             </ul>
           </div>
-          <div class="col-md-4">
-            <h2>Contact</h2>
-            <ul class="list-unstyled">
-              <li><a href="/#contact" class="">Form</a></li>
-              <li><a target="_blank" href="mailto:admissions@echoenglishschool.com" class="">Email</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h2>Social</h2>
-            <ul class="list-unstyled">
-              <li><a target="_blank" href="http://instagram.com/echo_englishschool" class="">Instagram</a></li>
-              <li><a target="_blank" href="https://www.facebook.com/echoenghishschool" class="">Facebook</a></li>
-            </ul>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
     <hr/>
     <div class="row">
       <div class="footer__copyright col-md-6 text-center text-md-left">
-        <p>© {{ data.global.siteTitle }}, All Right Reserved</p>
+        <p>{{ data.global.footerCopyright }}</p>
       </div>
-      <div class="footer__legal col-md-6 text-center text-md-right">
+      <div class="footer__legal-links col-md-6 text-center text-md-right">
         <p>
-          <a target="_blank" href="/privacy-policy">Privacy Policy</a>
-          <a target="_blank" href="/terms-of-service">Terms of Service</a>
+          {% for link in data.global.footerLegalLinks %}
+          <a href="{{ link.url }}" target="{{ '_blank' if link.openLinkInNewWindow else '_self' }}">
+            {{ link.text }}
+          </a>
+          {% endfor %}
         </p>
       </div>
     </div>
